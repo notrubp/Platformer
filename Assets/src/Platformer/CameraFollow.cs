@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Platformer
-{
-	public class CameraFollow : MonoBehaviour
-	{
-		[Tooltip("GameObject to follow")]
-		[SerializeField]
-		private GameObject
-			target;
+namespace Platformer {
+  public class CameraFollow : MonoBehaviour {
+    [SerializeField]
+    private GameObject target;
 
-		void Awake ()
-		{
-		}
+    void Awake() {
+    }
 
-		void Update ()
-		{
-			transform.position = new Vector3 (target.transform.position.x, target.transform.position.y, -10.0f);
-		}
-	}
+    void Update() {
+      if (target != null) {
+        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -10.0f);
+      }
+    }
+  }
 }
