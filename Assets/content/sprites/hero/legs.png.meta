@@ -1,0 +1,484 @@
+fileFormatVersion: 2
+guid: 14ac50490529c444281a238cce5f92ef
+timeCreated: 1441585089
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: legs_0
+    21300002: legs_1
+    21300004: legs_2
+    21300006: legs_3
+    21300008: legs_4
+    21300010: legs_5
+    21300012: legs_6
+    21300014: legs_7
+    21300016: legs_8
+    21300018: legs_9
+    21300020: legs_10
+    21300022: legs_11
+    21300024: legs_12
+    21300026: legs_13
+    21300028: legs_14
+    21300030: legs_15
+    21300032: legs_16
+    21300034: legs_17
+    21300036: legs_18
+    21300038: legs_19
+    21300040: legs_20
+    21300042: legs_21
+    21300044: legs_22
+    21300046: legs_23
+    21300048: legs_24
+    21300050: legs_25
+    21300052: legs_26
+    21300054: legs_27
+    21300056: legs_28
+    21300058: legs_29
+    21300060: legs_30
+    21300062: legs_31
+    21300064: legs_32
+    21300066: legs_33
+    21300068: legs_34
+    21300070: legs_35
+    21300072: legs_36
+    21300074: legs_37
+    21300076: legs_38
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 20
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: legs_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 21
+        height: 16
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 4
+        width: 21
+        height: 16
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 4
+        width: 21
+        height: 16
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 4
+        width: 21
+        height: 16
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 4
+        width: 21
+        height: 16
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 4
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: .414287746, y: .86499989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_6
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 4
+        width: 28
+        height: 20
+      alignment: 9
+      pivot: {x: .36785835, y: .839999855}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_7
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 8
+        width: 31
+        height: 16
+      alignment: 9
+      pivot: {x: .34935835, y: .758302212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_8
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 4
+        width: 19
+        height: 20
+      alignment: 9
+      pivot: {x: .345234931, y: .816606045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_9
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 4
+        width: 15
+        height: 20
+      alignment: 9
+      pivot: {x: .407879651, y: .810732007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_10
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 4
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: .393053055, y: .80779469}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_11
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 4
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: .37958926, y: .859858334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_12
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 4
+        width: 26
+        height: 20
+      alignment: 9
+      pivot: {x: .412697434, y: .854263484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_13
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 8
+        width: 31
+        height: 16
+      alignment: 9
+      pivot: {x: .363592327, y: .841387749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_14
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 4
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: .374443054, y: .83779496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_15
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 4
+        width: 15
+        height: 20
+      alignment: 9
+      pivot: {x: .353336602, y: .804999948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_16
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 4
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: .390562266, y: .836606026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 4
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: .394141793, y: .835452437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_18
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 4
+        width: 24
+        height: 20
+      alignment: 9
+      pivot: {x: .402973175, y: .978669286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_19
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 4
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: .389112204, y: .952795208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_20
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 4
+        width: 19
+        height: 20
+      alignment: 9
+      pivot: {x: .45233798, y: .913984179}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_21
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 4
+        width: 26
+        height: 20
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_22
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 4
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: .378715515, y: 1.00454319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_23
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 4
+        width: 21
+        height: 18
+      alignment: 9
+      pivot: {x: .463035941, y: .902484477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_24
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 4
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: .478437632, y: .888110042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_25
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 4
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: .5, y: .881301403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_26
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 4
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: .543123364, y: .895297289}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_27
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 4
+        width: 18
+        height: 25
+      alignment: 9
+      pivot: {x: .449690074, y: .924333751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_28
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 4
+        width: 19
+        height: 25
+      alignment: 9
+      pivot: {x: .391058683, y: .898459673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_29
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 4
+        width: 20
+        height: 25
+      alignment: 9
+      pivot: {x: .415908813, y: .898459673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_30
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 6
+        width: 20
+        height: 23
+      alignment: 9
+      pivot: {x: .409442127, y: .882485509}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_31
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 9
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: .407592773, y: .901047051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 10
+        width: 21
+        height: 19
+      alignment: 9
+      pivot: {x: .426074803, y: .915346146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_33
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 7
+        width: 27
+        height: 22
+      alignment: 9
+      pivot: {x: .351465285, y: .905751586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_34
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 9
+        width: 29
+        height: 20
+      alignment: 9
+      pivot: {x: .419700891, y: .907515526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_35
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 11
+        width: 33
+        height: 18
+      alignment: 9
+      pivot: {x: .437276214, y: .909671903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_36
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 13
+        width: 30
+        height: 16
+      alignment: 9
+      pivot: {x: .405128986, y: .807253838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_37
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 12
+        width: 30
+        height: 17
+      alignment: 9
+      pivot: {x: .465502918, y: .827230096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: legs_38
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 11
+        width: 26
+        height: 18
+      alignment: 9
+      pivot: {x: .48009783, y: .837799728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

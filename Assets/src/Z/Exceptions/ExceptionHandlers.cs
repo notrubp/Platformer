@@ -1,0 +1,56 @@
+/**
+ * MIT License
+ * Copyright (c) 2015 notrubp@gmail.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
+ * files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software 
+ * is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE 
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * @license MIT
+ * @copyright notrubp@gmail.com 2015
+ */
+
+using System;
+using System.Collections.Generic;
+
+namespace Z.Exceptions {
+  public class ExceptionHandlers {
+    private static Dictionary<Type, LinkedList<Func<Exception, bool>>> table = new Dictionary<Type, LinkedList<Func<Exception, bool>>>();
+
+    public static bool HasHandlers(Type type) {
+      return table.ContainsKey(type) && table[type].Count > 0;
+    }
+
+    public static bool TryHandlers(Exception exception) {
+      Type type = exception.GetType();
+
+      if (HasHandlers(type)) {
+        foreach (Func<Exception, bool> handler in table[type]) {
+          if (handler(exception)) {
+            return true;
+          }
+        }
+      }
+
+      return false;
+    }
+
+    public static ExceptionHandlerRegistration AddHandler(Type type, Func<Exception, bool> handler) {
+      if (!table.ContainsKey(type)) {
+        table[type] = new LinkedList<Func<Exception, bool>>();
+      }
+
+      table[type].AddFirst(handler);
+
+      return new ExceptionHandlerRegistration(table[type], handler);
+    }
+  }
+}
