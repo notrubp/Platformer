@@ -25,13 +25,13 @@ namespace Platformer {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-      if (collision.gameObject.CompareTag("Static World")) {
+      if (collision.gameObject.CompareTag("World")) {
         pool.Free(this);
       }
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
-      if (collider.CompareTag("Static World")) {
+      if (collider.CompareTag("World")) {
         pool.Free(this);
       }
     }
