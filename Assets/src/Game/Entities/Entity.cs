@@ -1,14 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Z.Util;
+using Game.Entities.Controllers;
 
-namespace Platformer {
-  public class Character : MonoBehaviour {
-    private Rigidbody2D body;
+namespace Game.Entities {
+  public class Entity : MonoBehaviour {
+    [SerializeField]
+    private Rigidbody2D
+      body;
 
     public Rigidbody2D Body {
       get {
         return body;
+      }
+    }
+
+    [SerializeField]
+    private Controller
+      controller;
+
+    public Controller Controller {
+      get {
+        return controller;
+      }
+      set {
+        controller = value;
       }
     }
 
@@ -78,14 +94,8 @@ namespace Platformer {
         return flyingIntoWorldCollider;
       }
     }
-
+   
     protected virtual void Awake() {
-      body = GetComponent<Rigidbody2D>();
-
-      if (body == null) {
-        throw new MissingComponentException("Missing Rigidbody2D in \"" + name + "\".");
-      }
-
       lastKnownPosition = body.position;
       lastVelocityScaled = new Vector2();
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Platformer {
+namespace Game.Projectiles {
   public class Projectile : MonoBehaviour {
     [SerializeField]
     private string
@@ -13,9 +13,9 @@ namespace Platformer {
       }
     }
     
-    private ProjectilePool pool;
+    private Pool pool;
 
-    public ProjectilePool Pool {
+    public Pool Pool {
       get {
         return pool;
       }

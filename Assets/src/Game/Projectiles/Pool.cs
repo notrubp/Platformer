@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Platformer {
-  public class ProjectilePool : MonoBehaviour {
+namespace Game.Projectiles {
+  public class Pool : MonoBehaviour {
     [SerializeField]
     private GameObject[]
       prefabs;

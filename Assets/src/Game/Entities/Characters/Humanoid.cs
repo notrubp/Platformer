@@ -1,30 +1,15 @@
 using UnityEngine;
 using Z.Util;
 
-namespace Platformer {
+namespace Game.Entities.Characters {
   public class Humanoid : Character {
-    private Collider2D feet;
+    [SerializeField]
+    private Collider2D
+      feet;
 
     public Collider2D Feet {
       get {
         return feet;
-      }
-    }
-
-    private ObservableValue<bool> isMoving = new ObservableValue<bool>(false);
-    
-    public bool IsMoving {
-      get {
-        return isMoving.Value;
-      }
-      set {
-        isMoving.Value = value;
-      }
-    }
-    
-    public ObservableValue<bool> IsMovingObservable {
-      get {
-        return isMoving;
       }
     }
 
@@ -47,13 +32,6 @@ namespace Platformer {
 
     protected override void Awake() {
       base.Awake();
-
-      Transform feet = transform.FindChild("feet");
-
-      if (feet == null) {
-      }
-
-      this.feet = feet.GetComponent<Collider2D>();
 
       Animator[] animators = GetComponentsInChildren<Animator>();
 
@@ -83,7 +61,23 @@ namespace Platformer {
     private float horizontalMovement;
 
     protected override void Update() {
-      horizontalMovement = Input.GetAxisRaw("Horizontal");
+      Animator[] animators = GetComponentsInChildren<Animator>();
+
+      bool fire1 = Controller.PrimaryWeapon;
+
+      foreach (Animator animator in animators) {
+        animator.SetBool("fire1", fire1);
+      }
+
+      if (fire1) {
+        bool fire2 = Controller.SecondaryWeapon;
+      
+        foreach (Animator animator in animators) {
+          animator.SetBool("fire2", fire2);
+        }
+      }
+
+      horizontalMovement = Controller.Horizontal;
 
       if (horizontalMovement < 0) {
         IsHFlipped = true;
@@ -93,7 +87,7 @@ namespace Platformer {
 
       IsOnGround = Physics2D.IsTouchingLayers(feet, 1 << LayerMask.NameToLayer("World"));
 
-      IsJumping = IsOnGround && Input.GetButtonDown("Jump");
+      IsJumping = IsOnGround && Controller.Jump;
 
       if (IsJumping) {
         IsOnGround = false;
