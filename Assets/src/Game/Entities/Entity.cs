@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Z.Util;
-using Game.Entities.Controllers;
+using Game.Entities.Util;
+using System;
 
 namespace Game.Entities {
   public class Entity : MonoBehaviour {
@@ -12,19 +13,6 @@ namespace Game.Entities {
     public Rigidbody2D Body {
       get {
         return body;
-      }
-    }
-
-    [SerializeField]
-    private Controller
-      controller;
-
-    public Controller Controller {
-      get {
-        return controller;
-      }
-      set {
-        controller = value;
       }
     }
 
@@ -71,6 +59,11 @@ namespace Game.Entities {
         isHFlipped.Value = value;
       }
     }
+
+    // Quick utility for toggling.
+    public void HFlip() {
+      IsHFlipped = !IsHFlipped;
+    }
     
     public ObservableValue<bool> IsHFlippedObservable {
       get {
@@ -78,31 +71,45 @@ namespace Game.Entities {
       }
     }
 
-    private ObservableValue<float> flyingIntoWorldCollider = new ObservableValue<float>(0.0f);
+    private ObservableValue<float> flyingIntoGeometryLocalPlane = new ObservableValue<float>(0.0f);
     
-    public float FlyingIntoWorldCollider {
+    public float FlyingIntoGeometryLocalPlane {
       get {
-        return flyingIntoWorldCollider.Value;
+        return flyingIntoGeometryLocalPlane.Value;
       }
       set {
-        flyingIntoWorldCollider.Value = value;
+        flyingIntoGeometryLocalPlane.Value = value;
       }
     }
     
     public ObservableValue<float> IsFlyingIntoWorldColliderObservable {
       get {
-        return flyingIntoWorldCollider;
+        return flyingIntoGeometryLocalPlane;
       }
     }
-   
+
+    public event Action OnUpdate;
+
+    public event Action OnPreFixedUpdate;
+
+    public event Action OnPostFixedUpdate;
+
+    public event Action OnRevive;
+
+    public event Action OnKill;
+
     protected virtual void Awake() {
-      lastKnownPosition = body.position;
-      lastVelocityScaled = new Vector2();
+      lastKnownPosition = body != null ? body.position : Vector2.zero;
+      lastVelocityScaled = Vector2.zero;
     }
 
     protected virtual void Update() {
       if (IsOnGround) {
-        FlyingIntoWorldCollider = 0.0f;
+        FlyingIntoGeometryLocalPlane = 0.0f;
+      }
+
+      if (OnUpdate != null) {
+        OnUpdate();
       }
     }
 
@@ -113,42 +120,66 @@ namespace Game.Entities {
     }
 
     protected virtual void PreFixedUpdate() {
-      lastVelocityScaled = body.position - lastKnownPosition;
+      lastVelocityScaled = body != null ? body.position - lastKnownPosition : Vector2.zero;
+
+      if (OnPreFixedUpdate != null) {
+        OnPreFixedUpdate();
+      }
     }
 
     protected virtual void ApplyFixedUpdate() {
     }
 
     protected virtual void PostFixedUpdate() {
-      lastKnownPosition = body.position;
+      lastKnownPosition = body != null ? body.position : Vector2.zero;
+
+      if (OnPostFixedUpdate != null) {
+        OnPostFixedUpdate();
+      }
+    }
+
+    public virtual void Revive() {
+      gameObject.SetActive(true);
+
+      if (OnRevive != null) {
+        OnRevive();
+      }
+    }
+
+    public virtual void Kill() {
+      if (OnKill != null) {
+        OnKill();
+      }
+
+      gameObject.SetActive(false);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision) {
-      DoFlyingIntoWorldColliderCheck(collision);
+      DoFlyingIntoGeometryCheck(collision);
     }
 
     protected virtual void OnCollisionStay2D(Collision2D collision) {
-      DoFlyingIntoWorldColliderCheck(collision);
+      DoFlyingIntoGeometryCheck(collision);
     }
 
-    protected void DoFlyingIntoWorldColliderCheck(Collision2D collision) {
+    protected void DoFlyingIntoGeometryCheck(Collision2D collision) {
       if (!IsOnGround && collision.gameObject.layer == LayerMask.NameToLayer("World")) {
-        float avgx = 0.0f;
+        float closest = float.MaxValue;
 
         foreach (ContactPoint2D contactPoint in collision.contacts) {
-          avgx += contactPoint.point.x;
+          float x = contactPoint.point.x - transform.position.x;
+
+          if (Mathf.Abs(x) < closest) {
+            closest = x;
+          } 
         }
 
-        avgx /= collision.contacts.Length;
-
-        float x = transform.position.x;
-
-        FlyingIntoWorldCollider = avgx - x;
+        FlyingIntoGeometryLocalPlane = closest != float.MaxValue ? closest : 0.0f;
       }
     }
 
     protected virtual void OnCollisionExit2D(Collision2D collision) {
-      FlyingIntoWorldCollider = 0;
+      FlyingIntoGeometryLocalPlane = 0;
     }
   }
 }

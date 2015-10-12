@@ -6,8 +6,10 @@ namespace Game.Entities.Controllers {
     protected override void Update() {
       Horizontal = Input.GetAxisRaw("Horizontal");
       Vertical = Input.GetAxisRaw("Horizontal"); 
-      PrimaryWeapon = Input.GetButton("Fire1");
-      SecondaryWeapon = Input.GetButton("Fire2");
+
+      PrimaryWeapon = !SecondaryWeapon && Input.GetButton("Fire1");
+      SecondaryWeapon = !PrimaryWeapon && Input.GetButtonDown("Fire2");
+
       Jump = Input.GetButtonDown("Jump");
     }
   }

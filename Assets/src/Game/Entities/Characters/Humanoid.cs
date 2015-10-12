@@ -13,6 +13,42 @@ namespace Game.Entities.Characters {
       }
     }
 
+    [SerializeField]
+    private float groundFriction = 0.9f;
+
+    public float GroundFriction {
+      get {
+        return groundFriction;
+      }
+    }
+
+    [SerializeField]
+    private float groundAcceleration = 1.0f;
+
+    public float GroundAcceleration {
+      get {
+        return groundAcceleration;
+      }
+    }
+
+    [SerializeField]
+    private float maxGroundVelocity = 10.0f;
+
+    public float MaxGroundVelocity {
+      get {
+        return maxGroundVelocity;
+      }
+    }
+
+    [SerializeField]
+    private float jumpForce = 10.0f;
+
+    public float JumpForce {
+      get {
+        return jumpForce;
+      }
+    }
+
     private ObservableValue<bool> isJumping = new ObservableValue<bool>(false);
     
     public bool IsJumping {
@@ -30,10 +66,12 @@ namespace Game.Entities.Characters {
       }
     }
 
+    private Animator[] animators;
+
     protected override void Awake() {
       base.Awake();
 
-      Animator[] animators = GetComponentsInChildren<Animator>();
+      animators = GetComponentsInChildren<Animator>();
 
       IsOnGroundObservable.ValueChanged += (bool value, bool oldValue) => {
         foreach (Animator animator in animators) {
@@ -58,30 +96,21 @@ namespace Game.Entities.Characters {
       };
     }
 
-    private float horizontalMovement;
-
     protected override void Update() {
-      Animator[] animators = GetComponentsInChildren<Animator>();
-
       bool fire1 = Controller.PrimaryWeapon;
+      bool fire2 = Controller.SecondaryWeapon;
 
       foreach (Animator animator in animators) {
         animator.SetBool("fire1", fire1);
       }
 
-      if (fire1) {
-        bool fire2 = Controller.SecondaryWeapon;
-      
-        foreach (Animator animator in animators) {
-          animator.SetBool("fire2", fire2);
-        }
+      foreach (Animator animator in animators) {
+        animator.SetBool("fire2", fire2);
       }
 
-      horizontalMovement = Controller.Horizontal;
-
-      if (horizontalMovement < 0) {
+      if (Controller.Horizontal < 0) {
         IsHFlipped = true;
-      } else if (horizontalMovement > 0) {
+      } else if (Controller.Horizontal > 0) {
         IsHFlipped = false;
       }
 
@@ -109,20 +138,19 @@ namespace Game.Entities.Characters {
 
       Vector2 velocity = Body.velocity;
 
-      if (horizontalMovement < 0.0f && FlyingIntoWorldCollider >= 0.0f) {
-        velocity += Vector2.left;
-      } else if (horizontalMovement > 0.0f && FlyingIntoWorldCollider <= 0.0f) {
-        velocity += Vector2.right;
+      if (Controller.Horizontal < 0.0f && FlyingIntoGeometryLocalPlane >= 0.0f) {
+        velocity += Vector2.left * groundAcceleration;
+      } else if (Controller.Horizontal > 0.0f && FlyingIntoGeometryLocalPlane <= 0.0f) {
+        velocity += Vector2.right * groundAcceleration;
       } else {
-        velocity.x *= 0.9f;
+        velocity.x *= groundFriction;
       }
 
-      float max = 10.0f;
-
-      velocity.x = velocity.x <= -max ? -max : velocity.x >= max ? max : velocity.x;
+      // Clamp to maxGroundVelocity.
+      velocity.x = velocity.x <= -maxGroundVelocity ? -maxGroundVelocity : velocity.x >= maxGroundVelocity ? maxGroundVelocity : velocity.x;
 
       if (IsJumping) {
-        velocity += Vector2.up * 10.0f;
+        velocity += Vector2.up * jumpForce;
         IsJumping = false;
       }
 

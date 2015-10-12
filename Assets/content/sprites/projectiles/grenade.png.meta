@@ -1,13 +1,45 @@
 fileFormatVersion: 2
 guid: a56a28a185a9f44cf85a2e5512e28de1
-timeCreated: 1441811592
-licenseType: Pro
+timeCreated: 1444681353
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: grenade_0
+    21300002: grenade_1
+    21300004: grenade_2
+    21300006: grenade_3
+    21300008: grenade_4
+    21300010: grenade_5
+    21300012: grenade_6
+    21300014: grenade_7
+    21300016: grenade_8
+    21300018: grenade_9
+    21300020: grenade_10
+    21300022: grenade_11
+    21300024: grenade_12
+    21300026: grenade_13
+    21300028: grenade_14
+    21300030: grenade_15
+    21300032: grenade_16
+    21300034: grenade_17
+    21300036: grenade_18
+    21300038: grenade_19
+    21300040: grenade_20
+    21300042: grenade_21
+    21300044: grenade_22
+    21300046: grenade_23
+    21300048: grenade_24
+    21300050: grenade_25
+    21300052: grenade_26
+    21300054: grenade_27
+    21300056: grenade_28
+    21300058: grenade_29
+    21300060: grenade_30
+    21300062: grenade_31
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -30,25 +62,345 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: grenade_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 8
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 8
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 8
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 9
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 9
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 10
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 11
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_7
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 11
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_8
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 11
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_9
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 11
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 11
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_11
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 10
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_12
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 9
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_13
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 8
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_14
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 8
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_15
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 8
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_16
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 8
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_17
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 8
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_18
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 8
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_19
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 9
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_20
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 10
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_21
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 11
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_22
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 11
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_23
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 11
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_24
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 11
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_25
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 11
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_26
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 10
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_27
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 9
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_28
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 9
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_29
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 8
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_30
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 8
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grenade_31
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 8
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

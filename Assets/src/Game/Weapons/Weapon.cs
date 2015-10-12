@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using Game.Entities;
-using Game.Projectiles;
 using Game.Entities.Controllers;
+using Game.Entities.Util;
+using Game.Entities.Projectiles;
 
 namespace Game.Weapons {
   public class Weapon : MonoBehaviour {
@@ -18,11 +19,11 @@ namespace Game.Weapons {
 
     [SerializeField]
     private Pool
-      pool;
+      projectilePool;
     
-    public Pool Pool {
+    public Pool ProjectilePool {
       get {
-        return pool;
+        return projectilePool;
       }
     }
 
@@ -59,12 +60,16 @@ namespace Game.Weapons {
     }
 
     protected virtual void Update() {
-      if (Controller.PrimaryWeapon) {
+      if (ShouldFire()) {
         if (lastFire + fireRate < Time.unscaledTime) {
           Fire();
           lastFire = Time.unscaledTime;
         }
       }
+    }
+
+    public virtual bool ShouldFire() {
+      return false;
     }
 
     public virtual void Fire() {
